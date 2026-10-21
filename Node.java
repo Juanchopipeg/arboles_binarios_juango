@@ -1,12 +1,10 @@
 public class Node<E> {
 
-    /* fields */
     E value;      /* valor o dato del nodo */
     int key;      /* clave de ordenamiento */
     Node left;
     Node right;
 
-    /* methods */
     public Node() { }
 
     public Node(E value) {

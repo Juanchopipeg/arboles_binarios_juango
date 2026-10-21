@@ -19,7 +19,6 @@ public class Main {
         BinarySearchTree arbolCompras = new BinarySearchTree();
         BinarySearchTree arbolEdad = new BinarySearchTree();
 
-        // Creación e inserción
         for (Cliente c : clientes) {
             // TODO 1
             arbolCompras.insertNode(new Node<Cliente>((int) c.getTotal_compras(), c));
@@ -27,7 +26,6 @@ public class Main {
             arbolEdad.insertNode(new Node<Cliente>(c.getEdad(), c));
         }
 
-        // Verificación de la construcción
         System.out.println("Clientes registrados: " + clientes.length);
         System.out.println("Nodos en arbolCompras: " + arbolCompras.getKeyList().size());
         System.out.println("Nodos en arbolEdad: " + arbolEdad.getKeyList().size());

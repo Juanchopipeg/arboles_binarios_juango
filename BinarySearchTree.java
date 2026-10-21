@@ -16,28 +16,20 @@ public class BinarySearchTree {
         return root;
     }
 
-    /* ---------- INSERCIÓN ---------- */
-
-    // CORRECCIÓN: se actualiza la raíz con el resultado del método recursivo
     public void insertNode(Node newNode) {
         root = insertRecursive(newNode, root);
     }
 
-    // Parte C: las claves iguales ya NO se descartan, se envían a la rama derecha
     public Node insertRecursive(Node nodeToInsert, Node rootNode) {
-        // condición de parada: punto de inserción encontrado
         if (rootNode == null)
             return nodeToInsert;
 
-        // llamados recursivos
         if (nodeToInsert.getKey() < rootNode.getKey())
             rootNode.setLeft(insertRecursive(nodeToInsert, rootNode.getLeft()));
         else // mayor o igual -> derecha
             rootNode.setRight(insertRecursive(nodeToInsert, rootNode.getRight()));
         return rootNode;
     }
-
-    /* ---------- BÚSQUEDA ---------- */
 
     public boolean searchNodeRecursive(int key, Node rootNode) {
         if (rootNode == null)
@@ -49,7 +41,6 @@ public class BinarySearchTree {
         return searchNodeRecursive(key, rootNode.getRight());
     }
 
-    // Parte A.1: igual que searchNodeRecursive pero devuelve el nodo
     public Node buscarNodo(int key, Node rootNode) {
         if (rootNode == null)
             return null;
@@ -59,8 +50,6 @@ public class BinarySearchTree {
             return buscarNodo(key, rootNode.getLeft());
         return buscarNodo(key, rootNode.getRight());
     }
-
-    /* ---------- RECORRIDOS (vistos en clase) ---------- */
 
     public void InOrder(Node root) {
         if (root == null)
@@ -86,7 +75,6 @@ public class BinarySearchTree {
         System.out.println("->" + root.getKey());
     }
 
-    /* ---------- OPERACIONES A COMPLETAR ---------- */
 
     // Parte A.2: in-orden => llaves de menor a mayor
     public ArrayList<Integer> getKeyList() {
